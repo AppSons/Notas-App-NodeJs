@@ -1,5 +1,5 @@
 const express = require('express');
-const {dbConnection} = require('./config/database');
+const {dbConnection} = require('./src/config/database');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
@@ -13,7 +13,7 @@ const app = express();
 dbConnection();
 
 //require('./database');
-require('./config/passport');
+require('./src/config/passport');
 
 // Settings 
 app.set('port', process.env.PORT || 3000);
@@ -51,9 +51,9 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use(require('./routes/index'));
-app.use(require('./routes/notes'));
-app.use(require('./routes/users'));
+app.use(require('./src/routes/index'));
+app.use(require('./src/routes/notes'));
+app.use(require('./src/routes/users'));
 
 // Static Files
 
