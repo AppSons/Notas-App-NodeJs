@@ -5,10 +5,7 @@ const mongoose = require('mongoose');
 //Notes_App
 const dbConnection = async() => {
   try {
-    await mongoose.connect('mongodb+srv://Notes_App:Y4RvC3DYhDXK3GWY@cluster0.q3ing.mongodb.net/Notes_App',{
-     
-      
-    });
+    await mongoose.connect('mongodb+srv://Notes_App:Y4RvC3DYhDXK3GWY@cluster0.q3ing.mongodb.net/Notes_App');
 
     console.log('DB online');
 

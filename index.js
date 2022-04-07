@@ -15,6 +15,8 @@ const app = express();
 require('./database');
 require('./src/config/passport');
 
+//Conexion a BBDD
+
 dbConnection();
 
 // Settings 
