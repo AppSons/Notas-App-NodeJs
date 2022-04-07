@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 
-//Y4RvC3DYhDXK3GWY
-//Notes_App
 const dbConnection = async() => {
   try {
-    await mongoose.connect('mongodb+srv://Notes_App:Y4RvC3DYhDXK3GWY@cluster0.q3ing.mongodb.net/Notes_App');
+    await mongoose.connect(process.env.DB_CNN);
 
     console.log('DB online');
 

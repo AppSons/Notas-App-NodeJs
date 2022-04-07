@@ -12,7 +12,7 @@ const passport = require('passport');
 const app = express();
 
 
-require('./database');
+require('./src/config/database');
 require('./src/config/passport');
 
 //Conexion a BBDD
@@ -20,7 +20,7 @@ require('./src/config/passport');
 dbConnection();
 
 // Settings 
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main',
@@ -64,7 +64,11 @@ app.use(require('./src/routes/users'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Server is Listenning
-app.listen(app.get('port'), () => {
-    console.log('Server on Port', app.get('port'));
+//app.listen(app.get('port'), () => {
+//    console.log('Server on Port', app.get('port'));
+//});
+
+app.listen(process.env.PORT, () => {
+    console.log('Servidor corriendo en puerto' +  process.env.PORT);
 });
 
